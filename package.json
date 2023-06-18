@@ -1,0 +1,29 @@
+{
+  "name": "airlines tecnical test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "mocha -w ./tests/**/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lejesterdelacorte/PFhenryBack.git"
+  },
+  "author": "Grupo 14",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lejesterdelacorte/PFhenryBack/issues"
+  },
+  "homepage": "https://github.com/lejesterdelacorte/PFhenryBack#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.3.5",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.32.0"
+  }
+}
