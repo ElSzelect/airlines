@@ -12,5 +12,5 @@ const sequelize = new Sequelize("airline", DB_USER, DB_PASSWORD, {
 
 
 module.exports = {
-  conn: sequelize,sequelize
+  conn: sequelize, sequelize
 };

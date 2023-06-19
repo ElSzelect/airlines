@@ -1,24 +1,30 @@
 const {
-  formatFlightResponse,
+  formatFlightData,
   getFlightData,
-} = require("../controllers/flightDataController");
+} = require("../controllers/flightController");
 
 const flightHandler = async (req, res) => {
-  console.log("handler activado");
   const flightId = req.params.id;
   try {
     const flightData = await getFlightData(flightId);
-    const formattedData = formatFlightResponse(flightData);
 
+    if (flightData.length === 0) {
+      return res.status(404).json({
+        code: 404,
+        data: {},
+      });
+    }
+
+    const formattedData = formatFlightData(flightData);
     res.status(200).json({
       code: 200,
       data: formattedData,
     });
   } catch (error) {
     console.error("Error:", error);
-    res.status(500).json({
-      code: 500,
-      message: "Error al obtener los datos del vuelo",
+    res.status(400).json({
+      code: 400,
+      message: "could not connect to db",
     });
   }
 };
